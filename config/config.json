@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "@#Geeeee",
+    "database": "stock_dev",
+    "port": 5432,
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "Alhaq222",
+    "database": "stock_test",
+    "port": 2500,
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "Alhaq222",
+    "database": "stock_production",
+    "port": 2500,
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

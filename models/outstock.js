@@ -10,6 +10,10 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   OutStock.associate = function(models) {
     // associations can be defined here
+    OutStock.belongsTo(models.Driver, {
+      as: 'driver',
+      foreignKey: 'driverId'
+    })
     
   };
   return OutStock;

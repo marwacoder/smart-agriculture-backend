@@ -1,15 +1,15 @@
-const {  OutStock, InStock } = require('../models');
+const {  OutStock, InStock, Driver } = require('../models');
 const eyeD = require('shortid')
 
 
 const index = async(req, res) => {
     try {
-      const stocks = await OutStock.findAll()
+      const stocks = await OutStock.findAll({include: {model: Driver, as: 'driver'}})
       if(stocks) return res.status(200).json(stocks)
     }
     catch (error) {
       return res.status(500).json({
-        msg: "Server Error"
+        msg: "Server Error" + error
       })
     }
     
@@ -21,7 +21,6 @@ const dispatchStock = async(req, res) => {
     try {
       const stock = await InStock.findByPk(id)
   
-      console.log(quantity, stock.quantity, id, 'jjjjjj')
         if (!stock) {
           return res.status(404).json({ 
               msg: 'Stock Not Found'
